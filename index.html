@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--added for iOS app mode-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--<meta name="theme-color" content="#424242">-->
+    <meta name="description" content="Simply Complex Games">
+    <meta name="author" content="Tyler Heers, Jay Westerwelle">
+
+    <title>Simple Games - Home</title>
+
+    <!--favicon-->
+    <link rel="icon" href="images/Simple1%20copy.png">
+
+    <!-- GOOGLE FONTS-->
+    <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+    <link rel="import" href="bower_components/font-roboto/roboto.html">
+
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0,user-scalable=yes">
+    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <!-- 2. Import some Iron Elements -->
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-iconset-svg/iron-iconset-svg.html">
+    <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
+    <link rel="import" href="bower_components/iron-form/iron-form.html">
+
+    <!-- 2. Use an HTML Import to bring in some Paper Elements. -->
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animatable.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animations.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+
+    <link rel="import" href="home.html">
+
+
+    <style is="custom-style">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: #E5E5E5;
+            font-family: /*'Press Start 2P',*/
+            'Product Sans', 'RobotoDraft', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        a,
+        a:visited {
+            color: #EF5451;
+            text-decoration: none;
+        }
+        
+        paper-scroll-header-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        paper-toolbar {
+            paper-toolba font-size: 1.5rem;
+            background: #424242;
+            box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.26);
+            z-index: 1;
+        }
+        
+        paper-toolbar,
+        paper-toolbar a,
+        paper-toolbar a:visited {
+            color: white;
+        }
+        
+        paper-button {
+            color: white;
+            background-color: #EF5451;
+            margin-right: 0;
+            margin-top: 30px;
+        }
+        
+        #menuToggle {
+            padding: 0;
+            margin-right: 15px;
+        }
+        
+        #TitleOfContent {
+            font-size: 2rem;
+        }
+        
+        .container {
+            margin-top: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 90%;
+            height: auto;
+        }
+        
+        paper-card {
+            width: 95%;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        #loginFormContainer {
+            position: fixed;
+            width: 80%;
+            height: auto;
+            left: 10%;
+            top: 10%;
+            z-index: 1;
+        }
+        
+        #logo-container {
+            padding-left: 40px;
+            height: 80px;
+            border-bottom-color:
+        }
+        
+        img.logo-image {
+            width: 40%;
+            height: 90%;
+            padding-left: 38px;
+            padding-top: 20px;
+        }
+        
+        paper-scroll-header-panel {
+            margin-top: 250px;
+        }
+        
+        neon-animatable img {
+            width: 100%;
+            height: 300px;
+        }
+        
+        .uppershadow {
+            box-shadow: 0px -20px 20px -8px #CCC;
+        }
+        
+        paper-tabs::shadow #selectionBar {
+            background-color: #E5E5E5;
+        }
+        
+        paper-tab::shadow #ink {
+            color: #E5E5E5;
+        }
+        
+        .buttons {}
+        
+        paper-fab {
+            background-color: #EF5451;
+            z-index: 2;
+        }
+        
+        .left {
+            position: absolute;
+            margin-left: 30px;
+            top: 75px;
+            left: 0px;
+        }
+        
+        .right {
+            position: absolute;
+            margin-right: 30px;
+            top: 75px;
+            right: 0px;
+        }
+        
+        .contactFab {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+        }
+        
+        .headerLoginButton {
+            position: absolute;
+            float: right;
+            top: 0;
+            z-index: 0;
+        }
+        
+        #modal {
+            width: 50%;
+            height: 50%;
+        }
+        
+        #content {
+            width: 75%;
+        }
+        
+        aside {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Below are buttons and the animated Billboard from Home page-->
+    <div class="buttons">
+        <paper-fab class="left" icon="chevron-left" onclick="Left()"></paper-fab>
+        <paper-fab class="right" icon="chevron-right" onclick="Right()"></paper-fab>
+    </div>
+
+    <div id="billboardContent">
+        <neon-animated-pages id="myBilboard" class="flex" selected="[[selected]]" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
+            <neon-animatable>
+                <img src="images/rising-gamesLogo.png">
+            </neon-animatable>
+            <neon-animatable>
+                <img src="images/rednotegames.png">
+            </neon-animatable>
+            <neon-animatable>
+                <img src="icons/feature.png">
+            </neon-animatable>
+            <neon-animatable>
+                <img src="images/Simple1.png">
+            </neon-animatable>
+        </neon-animated-pages>
+    </div>
+
+    <paper-scroll-header-panel main>
+        <div class="uppershadow">
+            <paper-toolbar class="medium-tall">
+                <div id="TitleOfContent"><b>Simple Games</b></div>
+                <div class="flex"></div>
+                <label>Shop</label>
+                <paper-icon-button icon="shopping-cart"></paper-icon-button>
+
+                <label>Register</label>
+                <a href="registration.html">
+                    <paper-icon-button icon="add-circle"></paper-icon-button>
+                </a>
+                <label>Login</label>
+                <paper-icon-button data-dialog="modal" onclick="clickHandler(event)" icon="account-circle"></paper-icon-button>
+                <!--  <label>Sign Out</label>
+                <paper-icon-button icon="highlight-off"></paper-icon-button> -->
+                <div class="bottom fit">
+                    <paper-tabs id="tabs" selected="0">
+                        <paper-tab onclick="changePageToTabIndex(0)">
+                            <div>HOME</div>
+                        </paper-tab>
+                        <paper-tab onclick="changePageToTabIndex(1)">
+                            <div>GAMES</div>
+                        </paper-tab>
+                        <paper-tab onclick="changePageToTabIndex(2)">
+                            <div>COMPANY</div>
+                        </paper-tab>
+                    </paper-tabs>
+                </div>
+            </paper-toolbar>
+        </div>
+        <div class="container" main layout vertical center>
+
+            <neon-animated-pages id="myPages" class="flex" selected="[[selected]]" entry-animation="slide-from-right-animation" exit-animation="slide-from-right-animation">
+                <neon-animatable>
+
+                    <aside style="float: right">
+                        <paper-card>
+                            <h3>Stay Connected</h3>
+                            <section>
+                                <iron-icon src="icons/facebook.svg"></iron-icon> Facebook
+                            </section>
+                            <section>
+                                <iron-icon src="icons/google.svg"></iron-icon> Google+
+                            </section>
+
+                        </paper-card>
+                        <paper-card>
+                            <h3><b>Forums</b></h3>
+                            <h5>These are the game forums</h5>
+                            <a href="#">Read More...</a>
+                        </paper-card>
+                        <paper-card>
+                            <h3><b>News</b></h3>
+                            <h5>Get filled in on updates</h5>
+                            <a href="#">Read More...</a>
+                        </paper-card>
+                    </aside>
+                    <div id="content" style="float: left">
+                        <paper-card>
+                            <h1>Home Page</h1>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>Some BullShit
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </paper-card>
+                    </div>
+
+                </neon-animatable>
+                <neon-animatable>
+                    <paper-card>Projects Page</paper-card>
+                </neon-animatable>
+                <neon-animatable>
+                    <paper-card>Company Page</paper-card>
+                </neon-animatable>
+            </neon-animated-pages>
+        </div>
+
+    </paper-scroll-header-panel>
+
+
+
+    <!--this is a form that user submits on login; NOTE: hidden by default until user clicks login button-->
+    <section>
+        <paper-dialog id="modal" modal>
+            <div>
+                <label><b>Login</b>
+                    <paper-icon-button dialog-confirm icon="clear"></paper-icon-button>
+                </label>
+
+            </div>
+            <paper-input label="Username"></paper-input>
+            <paper-input label="Password" type="password"></paper-input>
+
+            <a href="registration.html">
+                <paper-button>Register</paper-button>
+            </a>
+            <a>
+                <paper-button dialog-confirm>Login</paper-button>
+            </a>
+        </paper-dialog>
+    </section>
+
+    <footer class="footer" id="footerContent">
+        <paper-fab id="contactUs" class="contactFab" icon="create" mini></paper-fab>
+        <paper-tooltip for="contactUs" offset="-85">Contact Us</paper-tooltip>
+    </footer>
+
+    <script>
+        var myBB = document.getElementById("myBilboard");
+        myBB.selected = 0;
+        var num_clicks = 0;
+
+        function Left() {
+            myBB.entryAnimation = 'slide-from-left-animation';
+            myBB.exitAnimation = 'slide-right-animation';
+            myBB.selected = myBB.selected === 0 ? 4 : (myBB.selected - 1);
+        }
+
+        function Right() {
+            myBB.entryAnimation = 'slide-from-right-animation';
+            myBB.exitAnimation = 'slide-left-animation';
+            myBB.selected = myBB.selected === 4 ? 0 : (myBB.selected + 1);
+        }
+
+
+        var myPages = document.getElementById("myPages");
+        myPages.selected = 0;
+
+        function changePageToTabIndex(page) {
+            if (page == 0) {
+                myPages.select("0");
+            } else if (page == 1) {
+                myPages.select("1");
+            } else if (page == 2) {
+                myPages.select("2");
+            }
+        }
+
+        function clickHandler(e) {
+            var button = e.target;
+            while (!button.hasAttribute('data-dialog') && button !== document.body) {
+                button = button.parentElement;
+            }
+
+            if (!button.hasAttribute('data-dialog')) {
+                return;
+            }
+
+            var id = button.getAttribute('data-dialog');
+            var dialog = document.getElementById(id);
+            if (dialog) {
+                dialog.open();
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

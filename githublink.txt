@@ -1,0 +1,5 @@
+Dont forget to add link to GitHub fro project.
+
+1) 
+
+while we are developing, people can look at our code an modify it.

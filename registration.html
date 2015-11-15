@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--added for iOS app mode-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--<meta name="theme-color" content="#424242">-->
+    <meta name="description" content="Simply Complex Games">
+    <meta name="author" content="Tyler Heers, Jay Westerwelle">
+
+    <title>Simple Games - Registration</title>
+
+    <!--favicon-->
+    <link rel="icon" href="images/Simple1%20copy.png">
+
+    <!-- GOOGLE FONTS-->
+    <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+    <link rel="import" href="bower_components/font-roboto/roboto.html">
+
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0,user-scalable=yes">
+    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <!-- 2. Import some Iron Elements -->
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-iconset-svg/iron-iconset-svg.html">
+    <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
+    <link rel="import" href="bower_components/iron-form/iron-form.html">
+
+    <!-- 2. Use an HTML Import to bring in some Paper Elements. -->
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animatable.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animations.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+
+    <link rel="import" href="home.html">
+
+
+    <style is="custom-style">
+        paper-input {
+            margin: 15px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: #E5E5E5;
+            font-family: /*'Press Start 2P',*/
+            'Product Sans', 'RobotoDraft', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        a,
+        a:visited {
+            color: #EF5451;
+            text-decoration: none;
+        }
+        
+        paper-scroll-header-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        paper-toolbar {
+            paper-toolba font-size: 1.5rem;
+            background: #424242;
+            box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.26);
+            z-index: 1;
+        }
+        
+        paper-toolbar,
+        paper-toolbar a,
+        paper-toolbar a:visited {
+            color: white;
+        }
+        
+        paper-button {
+            color: white;
+            background-color: #EF5451;
+        }
+        
+        #menuToggle {
+            padding: 0;
+            margin-right: 15px;
+        }
+        
+        #TitleOfContent {
+            margin: 0 auto;
+            font-size: 2rem;
+        }
+        
+        .container {
+            margin-top: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 90%;
+            height: auto;
+        }
+        
+        paper-card {
+            margin-right: auto;
+            width: 95%;
+            padding: 30px;
+        }
+        
+        .uppershadow {
+            box-shadow: 0px -20px 20px -8px #CCC;
+        }
+        
+        paper-tabs::shadow #selectionBar {
+            background-color: #E5E5E5;
+        }
+        
+        paper-tab::shadow #ink {
+            color: #E5E5E5;
+        }
+        
+        paper-fab {
+            background-color: #A200FF;
+            z-index: 2;
+        }
+        
+        #register {
+            width: 50%;
+            margin: 0 auto;
+            min-width: 300px;
+            max-width: 500px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Below are buttons and the animated Billboard from Home page-->
+
+    <paper-scroll-header-panel main>
+        <div class="uppershadow">
+            <paper-toolbar class="small">
+                <a href="index.html">
+                    <paper-icon-button icon="arrow-back"></paper-icon-button>
+                </a>
+                <div id="TitleOfContent"><b>Create Account</b></div>
+
+            </paper-toolbar>
+        </div>
+        <div id="register">
+            <paper-card onmouseover="elevation=5" onmouseout="elevation=1">
+                <form is="iron-form" id="formPost" method="post" action="/">
+                    <div>
+
+                    </div>
+
+                    <div>
+                        <paper-input label="Email"></paper-input>
+                        <paper-input label="Username"></paper-input>
+                        <paper-input label="Password" type="password"></paper-input>
+                    </div>
+
+                    <paper-button>Submit</paper-button>
+
+
+                </form>
+            </paper-card>
+        </div>
+    </paper-scroll-header-panel>
+
+</body>
+
+<script>
+    var myBB = document.getElementById("myBilboard");
+    myBB.selected = 0;
+    var num_clicks = 0;
+
+    function Left() {
+        myBB.entryAnimation = 'slide-from-left-animation';
+        myBB.exitAnimation = 'slide-right-animation';
+        myBB.selected = myBB.selected === 0 ? 4 : (myBB.selected - 1);
+    }
+
+    function Right() {
+        myBB.entryAnimation = 'slide-from-right-animation';
+        myBB.exitAnimation = 'slide-left-animation';
+        myBB.selected = myBB.selected === 4 ? 0 : (myBB.selected + 1);
+    }
+
+
+    var myPages = document.getElementById("myPages");
+    myPages.selected = 0;
+
+    function changePageToTabIndex(page) {
+        if (page == 0) {
+            myPages.select("0");
+        } else if (page == 1) {
+            myPages.select("1");
+        } else if (page == 2) {
+            myPages.select("2");
+        }
+    }
+
+    function loginUnhide() {
+        var loginFormContainer = document.getElementById("loginFormContainer");
+
+        if (num_clicks % 2 == 0) {
+            loginFormContainer.removeAttribute("hidden");
+            num_clicks++;
+        } else {
+            loginFormContainer.setAttribute("hidden", "true");
+            num_clicks++;
+        }
+    }
+
+    function cancelLoginSubmit() {
+        var loginFormContainer = document.getElementById("loginFormContainer");
+
+        loginFormContainer.setAttribute("hidden", "true");
+        num_clicks++;
+    }
+</script>
+
+</html>
